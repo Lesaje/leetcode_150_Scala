@@ -1,11 +1,11 @@
 object ArraysHashing {
   def containsDuplicate(nums: Array[Int]): Boolean = {
-    nums.toSet.size == nums.size;
+    nums.toSet.size == nums.length;
   }
 
   def twoSum(nums: Array[Int], target: Int): Array[Int] = {
-    for (i <- 0 until nums.size) {
-      for (j <- i + 1 until nums.size) {
+    for (i <- nums.indices) {
+      for (j <- i + 1 until nums.length) {
         if (nums(i) + nums(j) == target) {
           return Array(i, j)
         }
